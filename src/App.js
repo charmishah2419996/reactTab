@@ -1,26 +1,47 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import { render } from 'react-dom';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+
+let idCounter = 0;
+const generateIds = () => `custom-id-${idCounter++}`
+ 
+class App extends Component {
+  
+  handleSelect(index, last) {
+   
+  }
+ 
+  render() {
+    return (
+      
+ 
+     <div>
+      <Tabs
+        defaultIndex={1} onSelect={index=>console.log(index)}
+      >
+        <TabList>
+          <Tab>Foo</Tab>
+          <Tab>Bar</Tab>
+          <Tab>Baz</Tab>
+        </TabList>
+          <TabPanel>
+          <h2>Hello from Foo1</h2>
+        </TabPanel>
+        <TabPanel>
+          <h2>Hello from Bar2</h2>
+        </TabPanel>
+        <TabPanel>
+          <h2>Hello from Baz3</h2>
+        </TabPanel>
+      </Tabs>
+      </div>
+    
+    
+    );
+  }
 }
+ 
+
 
 export default App;
